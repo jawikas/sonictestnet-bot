@@ -1,0 +1,7 @@
+{
+"minAmount": 0.00105,
+"maxAmount": 0.00135,
+"minDelay": 7000,
+"maxDelay": 13000,
+"delayEachAccount": 1500
+}
