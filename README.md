@@ -31,7 +31,7 @@ Website : https://odyssey.sonic.game/?join=WSdeGi
 
    ```bash
    git clone https://github.com/jawikas/sonictestnet-bot.git
-   cd solanatestnet-bot
+   cd sonictestnet-bot
    ```
    
 ### Install the required npm modules:
