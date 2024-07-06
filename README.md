@@ -1,6 +1,6 @@
 ![image](https://github.com/jawikas/sonictestnet-bot/assets/63976518/897cd08b-5b1d-4141-89ce-e6ae551c5c3f)
 
-# Sonic Testnet Automated Bot
+# Sonic Testnet Automated (Transactions & Claim Box) Bot
 
 This repository contains a script for automating transactions on the Sonic testnet on Solana. The bot generates random addresses and sends SOL from configured accounts to these addresses. 
 
@@ -10,7 +10,16 @@ Website : https://odyssey.sonic.game/?join=WSdeGi
 ```
 0x705C71fc031B378586695c8f888231e9d24381b4
 ```
+## New Update (Add auto Claim Box)
+in this update there are some changes that you should pay attention to in `index.js` and `.env`, a few additions to the lines of code to claim mystery box prizes.
 
+![image](https://github.com/jawikas/sonictestnet-bot/assets/63976518/5d21939a-b1fd-42f3-ac83-ad03b8a4b760)
+
+**How do I get the authtoken?** 
+
+the way is to open the website and `press F12` on the keyboard then go to the `Network` section and look for the request named info then in the `headers` section scrool to `authorizations` and take the `value`.
+**example:**
+`eyJhbGciOiJxxxxxkpXVCJ9.eyJpZCI6MTc5OxxxxxxZEQWZwTE1QY3NpZWh4M0p4SlF1SnJxxxxxxxxxxxxxxl0YXRpb25fY29kZSI6IldTZGVHaSIsImlhxxxxxxxxxNzU1LCJqdGkiOiJzb25pY19hdxxxxxxxxIn0.YjLP_xJoxxxxxxj88sdBL_mfmNjuVkbTM`
 ## Features
 
 - Multi accounts executions 
@@ -19,6 +28,7 @@ Website : https://odyssey.sonic.game/?join=WSdeGi
 - Send SOL transactions to generated addresses
 - Configurable delay and transaction amounts
 - Track successful and failed transactions
+- Auto Claim Mystery Box (RING) `new`
 
 ## Prerequisites
 
@@ -45,6 +55,10 @@ Create a `.env` file in the root directory and add your seed phrases :
 SEED_PHRASES='[
   {"name": "nameAccount1", "phrase": "phraseAccount1"},
   {"name": "nameAccount2", "phrase": "phraseAccount2"}
+]'
+AUTH_TOKENS='[
+  {"name": "yourName", "token": "yourAuthToken"},
+  {"name": "yourName", "token": "yourAuthToken"},
 ]'
    ```
 
