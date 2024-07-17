@@ -1,6 +1,6 @@
 ![image](https://github.com/jawikas/sonictestnet-bot/assets/63976518/897cd08b-5b1d-4141-89ce-e6ae551c5c3f)
 
-# Sonic Testnet Automated (Transactions & Claim Box) Bot
+# Sonic Testnet Automated (Transactions) Bot
 
 This repository contains a script for automating transactions on the Sonic testnet on Solana. The bot generates random addresses and sends SOL from configured accounts to these addresses. 
 
