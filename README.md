@@ -15,11 +15,6 @@ in this update there are some changes that you should pay attention to in `index
 
 ![image](https://github.com/jawikas/sonictestnet-bot/assets/63976518/5d21939a-b1fd-42f3-ac83-ad03b8a4b760)
 
-**How do I get the authtoken?** 
-
-the way is to open the website and `press F12` on the keyboard then go to the `Network` section and look for the request named info then in the `headers` section scrool to `authorizations` and take the `value`.
-**example:**
-`eyJhbGciOiJxxxxxkpXVCJ9.eyJpZCI6MTc5OxxxxxxZEQWZwTE1QY3NpZWh4M0p4SlF1SnJxxxxxxxxxxxxxxl0YXRpb25fY29kZSI6IldTZGVHaSIsImlhxxxxxxxxxNzU1LCJqdGkiOiJzb25pY19hdxxxxxxxxIn0.YjLP_xJoxxxxxxj88sdBL_mfmNjuVkbTM`
 ## Features
 
 - Multi accounts executions 
@@ -55,10 +50,6 @@ Create a `.env` file in the root directory and add your seed phrases :
 SEED_PHRASES='[
   {"name": "nameAccount1", "phrase": "phraseAccount1"},
   {"name": "nameAccount2", "phrase": "phraseAccount2"}
-]'
-AUTH_TOKENS='[
-  {"name": "yourName", "token": "yourAuthToken"},
-  {"name": "yourName", "token": "yourAuthToken"},
 ]'
    ```
 
