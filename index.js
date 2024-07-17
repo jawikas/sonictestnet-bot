@@ -41,69 +41,6 @@ function printBanner() {
   console.log(colors.red + "    NOT FOR SALE = Free to use \n" + colors.reset);
 }
 
-const authorizationTokens = JSON.parse(process.env.AUTH_TOKENS || '[]');
-
-async function refreshData(token) {
-  try {
-    const refreshResponse = await fetch('https://odyssey-api.sonic.game/user/transactions/state/daily', {
-      method: 'GET',
-      headers: {
-        'Accept': '*/*',
-        'Accept-Encoding': 'gzip, deflate, br, zstd',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Content-Type': 'application/json',
-        'Authorization': token,
-        'Origin': 'https://odyssey.sonic.game',
-        'Referer': 'https://odyssey.sonic.game/',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
-      }
-    });
-
-    return true;
-  } catch (error) {
-    console.error('Error refreshing data:', error);
-    return false;
-  }
-}
-
-async function claimRewards() {
-  try {
-    for (const { name, token } of authorizationTokens) {
-      await refreshData(token);
-
-      const headers = {
-        'Accept': '*/*',
-        'Accept-Encoding': 'gzip, deflate, br, zstd',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Authorization': token,
-        'Content-Type': 'application/json',
-        'Origin': 'https://odyssey.sonic.game',
-        'Referer': 'https://odyssey.sonic.game/',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
-      };
-
-      for (let stage = 1; stage <= 3; stage++) {
-        const response = await fetch('https://odyssey-api.sonic.game/user/transactions/rewards/claim', {
-          method: 'POST',
-          headers: headers,
-          body: JSON.stringify({ stage })
-        });
-
-        const responseData = await response.json();
-        
-        if (responseData.status === 'success') {
-          console.log(`${colors.yellow}${name.padEnd(10)} ${colors.cyan}[  ${stage} ] ${colors.green}Success | ${colors.blue}Claim Reward | ${colors.green}the ring box has been picked up${colors.reset}`);
-        } else {
-          console.log(`${colors.yellow}${name.padEnd(10)} ${colors.cyan}[  ${stage} ] ${colors.red}Failed  | ${colors.blue}None Reward | ${colors.yellow}${responseData.message}${colors.reset}`);
-        }
-      }
-    }
-
-  } catch (error) {
-    console.error('Error claiming rewards:', error);
-  }
-}
-
 const transactionCount = {};
 let totalSuccess = 0; 
 let totalFailed = 0; 
@@ -252,7 +189,6 @@ async function main() {
     });
 
     await Promise.all(transactionPromises);
-    await claimRewards();
   }
   console.log(`${colors.red}==============================================================${colors.reset}`);
   console.log(`${colors.green}Total Successful Transactions: ${totalSuccess}${colors.reset}`);
