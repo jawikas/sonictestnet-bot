@@ -10,10 +10,6 @@ Website : https://odyssey.sonic.game/?join=WSdeGi
 ```
 0x705C71fc031B378586695c8f888231e9d24381b4
 ```
-## New Update (Add auto Claim Box)
-in this update there are some changes that you should pay attention to in `index.js` and `.env`, a few additions to the lines of code to claim mystery box prizes.
-
-![image](https://github.com/jawikas/sonictestnet-bot/assets/63976518/5d21939a-b1fd-42f3-ac83-ad03b8a4b760)
 
 ## Features
 
@@ -23,7 +19,6 @@ in this update there are some changes that you should pay attention to in `index
 - Send SOL transactions to generated addresses
 - Configurable delay and transaction amounts
 - Track successful and failed transactions
-- Auto Claim Mystery Box (RING) `new`
 
 ## Prerequisites
 
